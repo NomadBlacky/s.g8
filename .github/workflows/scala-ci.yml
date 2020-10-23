@@ -3,15 +3,12 @@ name: Scala CI
 on: [push, pull_request]
 
 jobs:
-  sbt_tasks:
+  test:
     strategy:
       matrix:
         jdk:
           - 8
           - 11
-        command:
-          - scalafmtCheckAll scalafmtSbtCheck
-          - +test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,5 +16,7 @@ jobs:
         with:
           java-version: ${{ matrix.jdk }}
       - uses: coursier/cache-action@v3
-      - name: Run `sbt ${{ matrix.command }}`
-        run: ./sbt ${{ matrix.command }}
+      - name: Check code format with scalafmt
+        run: ./sbt scalafmtCheckAll scalafmtSbtCheck
+      - name: Run tests
+        run: ./sbt +test
