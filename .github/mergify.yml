@@ -10,7 +10,8 @@ pull_request_rules:
   - name: merge scala-steward's PRs
     conditions:
       - author=github-actions[bot]
-      - status-success=test
+      - "status-success=test (8)"
+      - "status-success=test (11)"
     actions:
       merge:
         method: squash
