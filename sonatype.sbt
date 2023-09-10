@@ -16,14 +16,14 @@ homepage := Some(url("https://github.com/NomadBlacky/$name$"))
 scmInfo := Some(
   ScmInfo(
     url("https://github.com/NomadBlacky/$name$"),
-    "scm:git@github.com:NomadBlacky/$name$.git"
-  )
+    "scm:git@github.com:NomadBlacky/$name$.git",
+  ),
 )
 developers := List(
   Developer(
     id = "NomadBlacky",
     name = "Takumi Kadowaki",
     email = "tkadowaki.dev.blackey@gmail.com",
-    url = url("https://www.nomadblacky.dev")
-  )
+    url = url("https://www.nomadblacky.dev"),
+  ),
 )
